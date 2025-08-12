@@ -1,0 +1,11 @@
+,BASECURRENCYCODE,BASECURRENCYNAME,INVESTMENTSTYLE,ISBEGINOFDAYPERFORMANCE,NAME,OPENDATE,PERFORMANCEINCEPTIONDATE,PORTFOLIOCATEGORY,PORTFOLIOCODE,PRODUCTCODE,TERMINATIONDATE
+0,USD,US Dollar,Growth,True,Retirement Portfolio 1,2006-06-07,2006-06-07,Individual Account,PORT001,PRD011,
+1,USD,US Dollar,Growth,True,Retirement Portfolio 2,2006-06-07,2006-06-07,Individual Account,PORT002,PRD004,
+2,USD,US Dollar,Growth,True,Retirement Portfolio 3,2006-06-07,2006-06-07,Individual Account,PORT003,PRD010,
+3,USD,US Dollar,Growth,True,Retirement Portfolio 4,2003-10-27,2003-10-27,Individual Account,PORT004,PRD004,
+4,USD,US Dollar,Growth,True,Retirement Portfolio 5,2006-06-07,2006-06-07,Individual Account,PORT005,PRD009,
+5,USD,US Dollar,Growth,True,Retirement Portfolio 6,2003-10-27,2003-10-27,Individual Account,PORT006,PRD004,
+6,USD,US Dollar,Growth,True,Retirement Portfolio 7,2003-10-27,2003-10-27,Individual Account,PORT007,PRD003,
+7,USD,US Dollar,Growth,True,Retirement Portfolio 8,2003-10-27,2003-10-27,Individual Account,PORT008,PRD003,
+8,USD,US Dollar,Growth,True,Retirement Portfolio 9,2003-10-27,2003-10-27,Individual Account,PORT009,PRD007,
+9,USD,US Dollar,Growth,True,Retirement Portfolio 10,2003-10-27,2003-10-27,Individual Account,PORT010,PRD001,

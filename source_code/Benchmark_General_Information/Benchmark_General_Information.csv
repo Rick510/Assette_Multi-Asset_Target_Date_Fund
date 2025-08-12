@@ -1,0 +1,21 @@
+BENCHMARKCODE,SYMBOL,NAME,ISBEGINOFDAYPERFORMANCE
+sptotal,514496129,40% S&P 500 / 43% Bloomberg US Treasury,False
+sptotal,512619515,Morningstar Lifetime 2040 Index,False
+sptotal,BLANK,Morningstar Lifetime 2060 Index,False
+sptotal,BLANK,FTSE Target Date 2025 Index,False
+sptotal,BLANK,Morningstar Lifetime 2055 Index,False
+sptotal,512358545,S&P Target Date 2050 Index,False
+sptotal,BLANK,Russell 3000 Target Date Benchmark,False
+sptotal,514224403,MSCI World Lifecycle Benchmark,False
+sptotal,BLANK,Composite Target Retirement 2035 Index,False
+sptotal,519356802,Russell 3000 Lifecycle Benchmark,False
+sptotal,BLANK,Moderate 48% Equity Benchmark,False
+sptotal,512250108,S&P Target Date 2030 Index,False
+sptotal,BLANK,Composite Lifecycle 2035 Index,False
+sptotal,BLANK,S&P Target Date 2045 Index,False
+sptotal,BLANK,Moderate 33% Equity Benchmark,False
+sptotal,BLANK,Aggressive 71% Equity Benchmark,False
+sptotal,511713883,Bloomberg Global Agg Target Date Benchmark,False
+sptotal,515758682,Morningstar Target Date 2065 Benchmark,False
+sptotal,BLANK,Balanced 24% Equity Benchmark,False
+sptotal,BLANK,S&P Target Date 2035 Composite,False

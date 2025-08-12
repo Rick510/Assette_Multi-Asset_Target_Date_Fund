@@ -1,0 +1,13 @@
+PRODUCTCODE,PRODUCTNAME,STRATEGY,VEHICLECATEGORY,VEHICLETYPE,ASSETCLASS,SHARECLASS,PERFORMANCEACCOUNT,REPRESENTATIVEACCOUNT,ISMARKETED,PARENTPRODUCTCODE
+PRD001,Vanguard Target Retirement 2070 Fund,VSVNX,Pooled,Mutual Fund,Multi-Asset,,1369,OC1303,True,
+PRD002,Vanguard Target Retirement 2065 Fund,VLXVX,Pooled,Mutual Fund,Multi-Asset,,OC1318,OC1318,True,
+PRD003,Vanguard Target Retirement 2060 Fund,VTTSX,Pooled,Mutual Fund,Multi-Asset,,LX144,LX144,True,
+PRD004,Vanguard Target Retirement 2055 Fund,VFFVX,Pooled,Mutual Fund,Multi-Asset,,ASTTDFMF,ASTTDFMODEL,True,
+PRD005,Vanguard Target Retirement 2050 Fund,VFIFX,Pooled,Mutual Fund,Multi-Asset,,ASTTDFCOMP,ASTTDFMODEL,True,
+PRD006,Vanguard Target Retirement 2045 Fund,VTIVX,Pooled,Mutual Fund,Multi-Asset,,ASTTDFCOMP,1845,True,
+PRD007,Vanguard Target Retirement 2040 Fund,VFORX,Pooled,Mutual Fund,Multi-Asset,,ASTTDFCOMP,ASTTDFMODEL,True,
+PRD008,Vanguard Target Retirement 2035 Fund,VTTHX,Pooled,Mutual Fund,Multi-Asset,,OC1773,ASTTDFMODEL,True,
+PRD009,Vanguard Target Retirement 2030 Fund,VTHRX,Pooled,Mutual Fund,Multi-Asset,,ASTTDFCOMP,ASTTDFMODEL,True,
+PRD010,Vanguard Target Retirement 2025 Fund,VTTVX,Pooled,Mutual Fund,Multi-Asset,,OC1891,ASTTDFMODEL,True,
+PRD011,Vanguard Target Retirement 2020 Fund,VTWNX,Pooled,Mutual Fund,Multi-Asset,,ASTTDFMF,ASTTDFMODEL,True,
+PRD012,Vanguard Target Retirement Income Fund,VTINX,Pooled,Mutual Fund,Multi-Asset,,LX415,LX415,True,

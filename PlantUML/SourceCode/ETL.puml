@@ -1,0 +1,70 @@
+@startuml
+' === Layout & Theme ===
+left to right direction
+title **ETL Data Flow (Data Source → Staging → Database)**
+skinparam backgroundColor #FCFCFF
+skinparam roundcorner 20
+skinparam shadowing false
+skinparam ArrowColor #404854
+skinparam defaultFontName Helvetica
+skinparam dpi 180
+
+' --- Package styles ---
+skinparam package {
+  BackgroundColor #F6F8FB
+  BorderColor #C9D2E3
+}
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #B9C4D1
+  StereotypeFontSize 10
+}
+skinparam database {
+  BackgroundColor #FFF5E9
+  BorderColor #F4B860
+}
+
+' === Legend ===
+legend right
+  |= Stage |= Meaning |= Tooling |
+  | Extract | Pull data from data source | Python |
+  | Transform | Clean / Validate / Enrich | Python |
+  | Load | Load to Database | Python, SQL |
+endlegend
+
+' === Lanes / Groups ===
+package "Data Sources" as DS {
+  rectangle "Yahoo Finance" as YF <<source>>
+  rectangle "Vanguard"      as VG <<source>>
+  rectangle "REST API"      as API <<source>>
+}
+
+package "Staging Area" as SG {
+  rectangle "DataFrame\n(Python)" as DF <<staging>>
+}
+
+package "Database" as DB {
+  database "Snowflake" as SF
+  database "Excel" as EX
+  ' rectangle "Tables / Views" as T
+  ' SF -down- T : meta
+}
+
+' === Styles for steps (colored arrows) ===
+' Extract → Blue
+VG -[#4C9BFF,thickness=3]-> DF : **Extract**\n<font:monospaced>Python</font>
+
+
+' Transform → Red
+DF -[#FF6B6B,thickness=3]-> DF : **Transform**
+
+' Load → Green
+DF -[#35B37E,thickness=3]-> SF : **Load**\n<font:monospaced>Python, SQL</font>
+
+' === Small cosmetic notes ===
+' note bottom of DF #FFFFFF
+'   Single source of truth during transform
+' end note
+
+center footer © Multi-Asset Target Date Fund
+@enduml

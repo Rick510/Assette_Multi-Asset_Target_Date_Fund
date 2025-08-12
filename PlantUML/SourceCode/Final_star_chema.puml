@@ -1,0 +1,132 @@
+@startuml
+title Entity relationship Diagram
+'--- setup the background ---
+skinparam entity {
+  BackgroundColor<<Fact>> #FFD8B1
+  BackgroundColor<<Dimension>> #B1E1FF
+  BorderColor black
+}
+'---------------------
+' Define Fact table
+entity "PORTFOLIOGENERALINFORMATION" as PGI <<Fact>> {
+  {PK} PORTFOLIOCODE              : varchar
+  NAME                            : varchar
+  INVESTMENTSTYLE                 : varchar
+  PORTFOLIOCATEGORY               : varchar
+  OPENDATE                        : date
+  PERFORMANCEINCEPTIONDATE        : timestamp
+  TERMINATIONDATE                 : date
+  {FK} BASECURRENCYCODE           : varchar
+  BASECURRENCYNAME                : varchar
+  ISBEGINOFDATEPERFORMANCE        : boolean
+  {FK} PRODUCTCODE                : varchar
+}
+' Define all dimension table
+entity PRODUCTMASTER <<Dimension>> {
+  {PK} PRODUCTCODE      : varchar
+  PRODUCTNAME           : varchar
+  STRATEGY              : varchar
+  VEHICLECATEGORY       : varchar
+  VEHICLETYPE           : varchar
+  ASSETCLASS            : varchar
+  SHARECLASS            : varchar
+  PERFORMANCEACCOUNT    : varchar
+  REPRESENTATIVEACCOUNT : varchar
+  ISMARKETED            : boolean
+  PARENTPRODUCTCODE     : varchar
+}
+
+entity CURRENCY <<Dimension>> {
+  {PK} currency_code : string
+  country_name      : string
+  currency_name     : string
+  region            : string
+  subregion         : string
+}
+
+entity HOLDINGDETAILS <<Dimension>> {
+  {PK} PORTFOLIOCODE       : varchar
+  {PK} TICKER              : varchar
+  ISSUEDISPLAYNAME         : varchar
+  CURRENCYCODE             : varchar
+  ISSUETYPE                : varchar
+  PRICE                    : number
+  ASSETCLASSNAME           : varchar
+  QUANTITY                 : number
+  COSTBASIS                : number
+  MARKETVALUE              : number
+  HISTORYDATE              : date
+}
+
+entity PORTFOLIOPERFORMANCE <<Dimension>> {
+  {PK} PORTFOLIOCODE           : varchar
+  {PK} HISTORYDATE             : timestamp
+  CURRENCYCODE                 : varchar
+  PERFORMANCECATEGORY          : varchar
+  PERFORMANCECATEGORYNAME      : varchar
+  PERFORMANCETYPE              : varchar
+  PERFORMANCEINCEPTIONDATE     : timestamp
+  PORTFOLIOINCEPTIONDATE       : timestamp
+  PERFORMANCEFREQUENCY         : varchar
+  PERFORMANCEFACTOR            : float
+}
+
+entity BENCHMARKPERFORMANCE <<Dimension>> {
+  {PK} BENCHMARKCODE        : varchar
+  {PK} HISTORYDATE          : timestamp
+  CURRENCYCODE              : varchar
+  PERFORMANCEDATATYPE       : varchar
+  VALUE                     : float
+  PERFORMANCEFREQUENCY      : varchar
+}
+
+entity BENCHMARKCHARACTERISTICS <<Dimension>> {
+  {PK} BENCHMARKCODE             : varchar
+  {PK} HISTORYDATE               : date
+  LANGUAGECODE                   : varchar
+  CATEGORY                       : varchar
+  CATEGORYNAME                   : varchar
+  CHARACTERISTICNAME             : varchar
+  CHARACTERISTICDISPLAYNAME      : varchar
+  STATISTICTYPE                  : varchar
+  CHARACTERISTICVALUE            : varchar
+  ABBREVIATEDTEXT                : varchar
+}
+
+entity "BENCHMARKGENERALINFORMATION" as BGI <<Fact>> {
+  {PK} BENCHMARKCODE               : varchar
+  SYMBOL                          : varchar
+  NAME                            : varchar
+  ISBEGINOFDAYPERFORMANCE         : boolean
+}
+
+entity "PORTFOLIOBENCHMARKASSOCIATION" as PBA <<Dimension>> {
+  {PK,FK} PORTFOLIOCODE           : varchar
+  {PK,FK} BENCHMARKCODE           : varchar
+  RECIPIENTCODE                   : varchar
+  RANK                            : number
+}
+
+
+'--- Define the Relationship ---
+PGI }|..|| PRODUCTMASTER      : PRODUCTCODE
+PGI }|..|| CURRENCY           : BASECURRENCYCODE
+PGI ||--o{ HOLDINGDETAILS     : PORTFOLIOCODE
+PGI ||--o{ PORTFOLIOPERFORMANCE: PORTFOLIOCODE
+
+
+
+
+
+' CURRECNY Relationship
+BENCHMARKPERFORMANCE        ||--o{ CURRENCY : CURRENCYCODE
+PORTFOLIOPERFORMANCE        ||--o{ CURRENCY : CURRENCYCODE
+HOLDINGDETAILS	            ||--o{ CURRENCY : CURRENCYCODE
+BENCHMARKCHARACTERISTICS	||--o{ CURRENCY : CURRENCYCODE
+
+' BENCHMARK Relationship
+PGI  ||--o{ PBA  : PORTFOLIOCODE
+BGI  ||--o{ PBA  : BENCHMARKCODE
+BGI  ||--o{ BENCHMARKPERFORMANCE : BENCHMARKCODE
+BGI  ||--o{ BENCHMARKCHARACTERISTICS : BENCHMARKCODE
+@enduml

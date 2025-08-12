@@ -1,0 +1,13 @@
+
+# Python version requirement
+# python_version >=3.9, <3.10
+
+
+numpy==2.0.2
+pandas==2.3.1
+yahooquery==2.4.1
+requests==2.32.4
+tenacity==9.1.2
+yfinance==0.2.65
+snowflake.connector==3.16.0
+dotenv==0.9.9

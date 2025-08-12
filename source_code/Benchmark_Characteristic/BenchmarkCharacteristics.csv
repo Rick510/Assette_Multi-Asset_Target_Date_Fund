@@ -1,0 +1,9 @@
+,BENCHMARKCODE,CURRENCYCODE,CURRENCY,LANGUAGECODE,CATEGORY,CATEGORYNAME,CHARACTERISTICNAME,CHARACTERISTICDISPLAYNAME,STATISTICTYPE,CHARACTERISTICVALUE,ABBREVIATEDTEXT,HISTORYDATE
+0,sp500,USD,US Dollar,en-US,Total,,# of Securities,# of Securities,NA,503.0,,2025-08-06
+1,sp500,USD,US Dollar,en-US,Total,,Price/Earnings (TTM),Price/Earnings (TTM),NA,26.868155,,2025-08-06
+3,sp500,USD,US Dollar,en-US,Total,,Price/Book Value,Price/Book Value,NA,1.4742557,,2025-08-06
+5,sp500,USD,US Dollar,en-US,Total,,Dividend Yield,Dividend Yield,NA,1.13,,2025-08-06
+6,sp500,USD,US Dollar,en-US,Total,,Dividends Per Share,Dividends Per Share,NA,5.662,,2025-08-06
+10,sp500,USD,US Dollar,en-US,Total,,1-Year Return (%),1-Year Return (%),NA,20.212865187338203,,2025-08-06
+11,sp500,USD,US Dollar,en-US,Total,,5-Year Return (%),5-Year Return (%),NA,13.467050009963156,,2025-08-06
+12,sp500,USD,US Dollar,en-US,Total,,Market Cap,Market Cap,NA,580754145280.0,,2025-08-06

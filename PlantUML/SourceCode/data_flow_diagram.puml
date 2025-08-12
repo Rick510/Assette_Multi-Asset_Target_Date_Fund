@@ -1,0 +1,61 @@
+@startuml
+
+title Data Flow Diagram
+
+' background set up
+left to right direction
+
+skinparam packageStyle rectangle
+skinparam rectangle {
+  Shadowing false
+  BorderColor black
+  BackgroundColor #F0F0F0
+}
+
+' define categories
+package "Data Source" {
+  rectangle "Vanguard" as DS_V
+  rectangle "Yahoo Finance" as DS_Y
+  rectangle "Currency REST API" as DS_C
+}
+
+package "Transformation" {
+  entity "Product Master"                  as PM
+  entity "Holding details"                 as HD
+  entity "Portfolio Performance"           as PP
+  entity "Benchmark Performance"           as BP
+  entity "Currency"                        as C
+  entity "Portfolio General Information"   as PGI
+  entity "Portfolio Benchmark Association" as PBA
+  entity "Benchmark General Information"   as BGI
+  entity "Benchmark Characteristic"        as BC
+}
+
+package "Database" {
+  database "Snowflake" as SF
+  folder   "Excel"       as EX
+}
+
+' data source → table
+DS_V --> PM:Product_Master_table.py
+DS_Y --> HD:HoldingDetails_Table.py
+DS_Y --> PP:PortfolioPerformance_Table.py
+DS_Y --> BP:Benchmark_Performance_table.py
+DS_Y --> BC:BenchmarkCharacteristic_table.py
+DS_C --> C:Currency_table.py
+' DS_C --> PGI
+' DS_C --> PBA
+' DS_C --> BGI
+' DS_C --> BC
+
+' table → database
+PM  --> EX
+HD  --> EX
+PP  --> EX
+BP  --> SF:Benchmark_Performance_to_Snowflake.py
+C   --> EX
+PGI --> EX
+PBA --> EX
+BGI --> EX
+BC  --> EX
+@enduml
